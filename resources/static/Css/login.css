@@ -1,0 +1,106 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    width: 100%;
+    font-family:sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #00eaff, #0088aa);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.LoginPage {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    width: 25%; /* width of form */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.LoginPage .intro h3 {
+    line-height: 1.2;
+    font-size: 22px;
+    color: #1F2937;
+    margin-bottom: 10px;
+}
+
+.LoginPage .intro h5 {
+    line-height: 1.5;
+    font-size: 14px;
+    color: #4B5563;
+    margin-top: 0;
+}
+
+
+.LoginPage label {
+    text-align: left;
+    display: block;
+    font-size: 12px;
+    color: #374151;
+    margin-bottom: 5px;
+}
+
+
+#loginForm input[type="email"],
+#loginForm input[type="password"] {
+    width: 95%;
+    height: 40px;
+    font-size: 16px;
+    border: 1.5px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    padding-left: 10px;
+}
+
+input::placeholder {
+    color: #999;
+}
+
+
+#loginForm button {
+    width: 100%;
+    background: #2563EB;
+    color: #FFFFFF;
+    height: 40px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: none;
+    margin-top: 10px;
+}
+
+#loginForm button:hover {
+    cursor: pointer;
+    background: #1E40AF;
+}
+
+
+#loginForm p {
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+.options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px 0;
+
+        }
+
+.options a {
+            margin: 0;
+            cursor: pointer;
+            color: black;
+
+        }
+
+.options a {
+    text-decoration: none;
+}
+
+
+

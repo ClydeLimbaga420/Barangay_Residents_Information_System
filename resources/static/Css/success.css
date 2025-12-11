@@ -1,0 +1,142 @@
+body {
+  margin:0;
+  padding:0;
+  cursor:default;
+  user-select:none;
+  background:#F3F4F6;
+  font-family:sans-serif;
+}
+
+#header {
+  width:100%;
+  height:66px;
+  display:flex;
+  justify-content:space-around;
+  padding:.1px;
+  background:#208AAE;
+  box-sizing:border-box;
+  align-items:center;
+  gap:64%;
+}
+
+
+#header .residentp {
+  margin:0;
+  padding-top:1%;
+  padding-bottom:1%;
+  color:#FFFFFF;
+  margin-left:2%;
+  font-size:27px;
+}
+
+#header .back {
+  font-size:22px;
+  color:white;
+  margin:0;
+  cursor:pointer;
+}
+
+.success-banner {
+  display: block;
+  border: solid;
+  padding: 0px 0px 0px 40px;
+  border-radius: 9px;
+  border-color: #BBF7D0;
+  background-color: #F0FDF4;
+  color: #166534;
+  margin: 15px 7% 10px 7%;
+}
+
+#residentsMoreInfo {
+  margin:1% auto;
+  background:white;
+  width:86%;
+  max-width:86%;
+  border-radius:9px;
+  border:1px solid #E5E7EB;
+  box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+#infoHeader {
+  display:flex;
+  gap:20px;
+  padding:1%;
+
+}
+
+#residentPhoto {
+  width:120px;
+  height:120px;
+  background:#9CA3AF;
+  border:0.1px solid #F3F4F6;
+  border-radius:9px;
+}
+
+.residentHeaderInfo {
+  display:flex;
+  flex-direction:column;
+  gap:11px;
+  margin-bottom:5%;
+}
+
+.residentName {
+  font-size:25px;
+  font-weight:bold;
+  font-family:arial;
+}
+
+.residentAge {
+  font-size:16px;
+}
+
+
+.editButton {
+  padding-right:2%;
+  color:#2563EB;
+  cursor:pointer;
+}
+
+#infoLower {
+  padding:1%;
+  padding-bottom:40px;
+  overflow-x:auto;
+  width:100%;
+}
+
+#infoTable {
+  border-collapse: collapse;
+  width:100%;
+}
+
+#infoTable td{
+  padding-right:90px;
+  padding-top:11.5px;
+  padding-bottom:15px;
+}
+
+#infoTable tr {
+  border:none;
+  border-bottom:1px solid #E5E7EB;
+}
+
+.button {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0px 2% 2%
+}
+
+.done {
+  background-color: #0c1e4a;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#Footer {
+  height:31px;
+  width:100%;
+  background:#4B5563;
+}

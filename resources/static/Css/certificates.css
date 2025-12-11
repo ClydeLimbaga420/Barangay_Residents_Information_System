@@ -1,0 +1,224 @@
+:root {
+  --accent: #2b6cb0;
+  --muted: #6b7280;
+  --bg: #f3f4f6;
+  --card: #ffffff;
+  --shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+#header {
+  width:100%;
+  height:66px;
+  display:flex;
+  justify-content:space-around;
+  padding:.1px;
+  background:#208AAE;
+  box-sizing:border-box;
+  align-items:center;
+  gap:64%;
+}
+
+#header .residentp {
+  margin:0;
+  padding-top:1%;
+  padding-bottom:1%;
+  color:#FFFFFF;
+  margin-left:2%;
+  font-size:27px;
+}
+
+#header #back {
+  font-size:22px;
+  color:white;
+  margin:0;
+  cursor:pointer;
+  padding-right: 35px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background: white;
+}
+
+.app {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.panel {
+  flex: 1 1 300px;
+  max-width: 350px;
+  background: var(--card);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+.panel h1 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 22px;
+  color: var(--accent);
+}
+
+.panel label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.panel input, .panel select  {
+  width: 90%;
+  padding: 8px;
+  margin: 5px 0 15px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+
+}
+
+.panel select {
+  width:95%;
+}
+.upload-block {
+  margin-bottom: 15px;
+}
+
+.certificate {
+  flex: 2 1 600px;
+  background: var(--card);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  position: relative;
+}
+
+#headerf {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  margin: 0;
+}
+
+#headerf p {
+  margin: 0;
+  line-height: 1.2;
+}
+
+#OOTPB {
+  padding-top:4%;
+  font-size:20px;
+  font-weight:bold;
+}
+
+.certificate h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.certificate p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.certContent {
+  padding: 90px 30px 160px 30px;
+}
+
+#concern {
+  font-size:19px;
+}
+
+.photo, .signature {
+  width: 120px;
+  height: 120px;
+  border: 1px dashed #999;
+  border-radius: 6px;
+  background: #f9f9f9;
+  overflow: hidden;
+  text-align: center;
+  line-height: 120px;
+  position: absolute;
+}
+
+.photo {
+  top: 30px;
+  right: 30px;
+}
+
+.signature {
+  bottom: 30px;
+  left: 30px;
+}
+
+.photo img, .signature img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#issueDate, #officerName, #officerTitle, #purposeText {
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .app {
+    flex-direction: column;
+  }
+  .panel, .certificate {
+    max-width: 100%;
+  }
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+button:hover {
+  background: #1e4e8c;
+}
+#certificate {
+  max-width: 750px;
+  margin: 0 auto;
+  page-break-inside: avoid;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: auto;
+}
+
+* {
+  page-break-before: avoid !important;
+  page-break-after: avoid !important;
+  page-break-inside: avoid !important;
+}
+
+.certContent {
+  padding: 40px 30px 60px 30px !important;
+}
+
+.signature-block {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.signature-block p {
+  margin: 4px 0;
+  line-height: 1.1;
+}

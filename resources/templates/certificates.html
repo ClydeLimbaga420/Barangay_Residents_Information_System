@@ -1,0 +1,112 @@
+<!Doctype html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Certificate & Clearance</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/Css/certificates.css}">
+    <link rel = "icon" th:href="@{/Images/Logo.png}">
+    <div id="header">
+        <p class="residentp"> <b>Certificates & Clearance</b></p>
+        <p id="back" onclick="window.location.href='/homepage'">Back</p>
+    </div>
+
+</head>
+
+<body>
+<div class="app">
+
+    <div class="panel">
+        <label>Certificate Type</label>
+        <select id="certType">
+            <option value="indigency">Certificate of Indigency</option>
+            <option value="residency">Certificate of Residency</option>
+            <option value="clearance">Barangay Clearance</option>
+            <option value="business">Business Clearance</option>
+        </select>
+
+
+        <label>Province</label>
+        <input id="provinceInput" type="text" placeholder="e.g., Cebu">
+
+        <label>Municipality</label>
+        <input id="municipalityInput" type="text" placeholder="e.g., Cebu City">
+
+        <label>Barangay</label>
+        <input id="barangayInput" type="text" placeholder="e.g., Barangay Pardo">
+
+
+        <label>Full Name</label>
+        <input id="citizenName" type="text" placeholder="Juan Dela Cruz">
+
+        <label>Address</label>
+        <input id="citizenAddress" type="text" placeholder="123 Sample St">
+
+        <label>Age</label>
+        <input id="age" type="number" placeholder="45">
+
+        <label>Purpose</label>
+        <input id="purpose" type="text" placeholder="Scholarship">
+
+        <label>Issue Date</label>
+        <input id="issuedDate" type="date" value="">
+
+        <label>Officer Name</label>
+        <input id="officerNameInput" type="text" placeholder="Punong Barangay">
+
+        <label>Officer Title</label>
+        <input id="officerTitleInput" type="text" placeholder="Barangay Captain">
+
+        <div class="upload-block">
+            <label>Logo</label>
+            <input id="photoFile" type="file" accept="image/*">
+        </div>
+
+
+
+        <button id="printPdfBtn">Print Certificate</button>
+        <button id="savePdfBtn">Save as PDF</button>
+    </div>
+
+    <div class="certificate" id="certificate">
+        <div id="headerf">
+            <p>Republic Of The Philippines</p>
+            <p>Province of <span id="Province"></span></p>
+            <p>Municipality of <span id="municipality"></span></p>
+            <p>Barangay <span id="barangay"></span></p>
+            <p id="OOTPB">Office Of The Punong Barangay</p>
+        </div>
+
+        <div class="certContent">
+            <h2 id="certificateTitle">CERTIFICATE OF INDIGENCY</h2>
+
+            <p id="concern">TO WHOM IT MAY CONCERN,</p>
+            <p id="certBody">Fill in the details to see the certificate here.</p>
+
+
+
+            <p><b>Issued on:</b> <span id="issueDate"></span></p>
+            <p><b>Purpose:</b> <span id="purposeText"></span></p>
+            <br><br><br>
+
+            <div class="signature-block">
+                <p><b><span id="officerName"></span></b></p>
+                <p><span id="officerTitle"></span></p>
+                <p><i>Signature over printed name</i></p>
+            </div>
+
+        </div>
+
+
+        <div class="photo" id="photoPreview">Logo</div>
+
+    </div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+<script th:src="@{Js/certificates.js}"></script>
+</body>
+</html>

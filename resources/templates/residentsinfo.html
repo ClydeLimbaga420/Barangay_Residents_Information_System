@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Residents Info</title>
+    <link rel="stylesheet" th:href="@{/Css/residentsinfo.css}">
+    <link rel="icon" th:href="@{/Images/Logo.png}">
+</head>
+<body>
+<div id="header">
+    <p class="residentp"><b>Residents Record</b></p>
+    <p class="back" onclick="window.location.href='/residentsrecords'">Back</p>
+</div>
+
+<div id="residentsMoreInfo">
+    <div id="infoHeader">
+        <img id="residentPhoto" src=" ">
+        <div class="residentHeaderInfo"></div>
+        <div class="editButton" style="margin-left:auto;">
+            <p id="residentEditPage">Edit</p>
+        </div>
+    </div>
+
+    <div id="infoLower">
+        <table id="infoTable">
+            <tr>
+                <td style="color:#6B7280;">Sex: </td>
+                <td id="residentSex"></td>
+                <td style="color:#6B7280;">Occupation</td>
+                <td id="residentOccupation"></td>
+            </tr>
+            <tr>
+                <td style="color:#6B7280;">Sitio: </td>
+                <td id="residentSitio"></td>
+                <td style="color:#6B7280;">Voters Status: </td>
+                <td id="residentVoterStatus"></td>
+            </tr>
+            <tr>
+                <td style="color:#6B7280;">BirthDate: </td>
+                <td id="residentBirthDate"></td>
+                <td style="color:#6B7280;">Civil Status:</td>
+                <td id="residentCivilStatus"></td>
+            </tr>
+            <tr>
+                <td style="color:#6B7280;">Household Members: </td>
+                <td id="residentHouseholdMembers"></td>
+                <td style="color:#6B7280;">Contact:</td>
+                <td id="residentContact"></td>
+            </tr>
+            <tr>
+                <td style="color:#6B7280;">Blood Type: </td>
+                <td id="residentBloodType"></td>
+                <td style="color:#6B7280;">Email:</td>
+                <td id="residentEmail"></td>
+            </tr>
+            <tr>
+                <td style="color:#6B7280;">Educational Attainment: </td>
+                <td id="residentEducationalAttainment"></td>
+                <td style="color:#6B7280;">Religion:</td>
+                <td id="residentReligion"></td>
+            </tr>
+            <tr>
+                <td style="color:#6B7280;">PWD: </td>
+                <td id="residentPWD"></td>
+                <td style="color:#6B7280;">Suffix:</td>
+                <td id="residentSuffix"></td>
+            </tr>
+            <tr>
+                <td style="color:#6B7280;">Senior: </td>
+                <td id="residentSenior"></td>
+                <td style="color:#6B7280;">Condition: </td>
+                <td id="residentCondition"></td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<script th:src="@{Js/residentsinfo.js}"></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Guide</title>
+    <link rel="stylesheet" th:href="@{/Css/userguide.css}">
+    <link rel = "icon" th:href="@{/Images/Logo.png}">
+
+</head>
+<body>
+<div class="header">
+    <h2 class="user"><b>User Guide</b></h2>
+    <button id="backBtn" onclick="window.history.back()" >Back</button>
+</div>
+
+<div class="content">
+
+    <h3>TABLE OF CONTENTS</h3>
+
+    <p><strong>I. INTRODUCTION</strong><br>
+        The Barangay Residents Information System (BRIS) is designed to help barangay officials manage digitally.
+        It automates resident registration, complaint tracking, and certificate issuance, reducing paperwork and improving service accuracy.</p>
+
+    <p><strong>II. SYSTEM OVERVIEW</strong><br>
+        The system is divided into several modules:<br>
+        • Home Page - Displays summary of residents, complaints, and certificates.<br>
+        • Residents - Add, edit, search, or update resident information.<br>
+        • Complaints - Record and monitor disputes at barangay cases.<br>
+        • Certificates - Issue Barangay Clearance, Business Clearance, Certificate of Indigency, and Residency.<br>
+        • Reports - Generate and view barangay data summaries.</p>
+
+    <p><strong>III. SYSTEM REQUIREMENTS</strong><br>
+        • Device: Desktop or Laptop (Windows 10+)</p>
+
+    <p><strong>IV. How to Use the System</strong><br>
+        1. Open the system.<br>
+        2. Log in using your assigned username and password.<br>
+        3. Choose a module from the top menu bar.<br>
+        4. Fill in the needed information and click Save or View.<br>
+        5. To print certificates, use the View button and confirm details.<br>
+        6. Use Back or Home to logout when done.</p>
+
+    <p><strong>IV.V Searching Categories</strong></p>
+        <b>1. For Residents Records</b><br>
+        •First Name Last Name<br>
+        •Last Name First Name<br>
+        •Residents ID<br>
+        •Sitio<br>
+        •Condition<br>
+        •Sex<br>
+        •Civil Status<br>
+        •Religion<br>
+        •Senior<br>
+        •PWD<br><br>
+        <b>2. For Blotter Records</b><br>
+        •Case Number<br>
+        •First Name and Last Name of Blottered Respondent <br>
+        •Status<br>
+        •Case Level<br>
+    <p><strong>V. Security and Roles</strong><br>
+        Only authorized users can access the system.<br>
+        Always log out after use to protect data.</p>
+
+    <p><strong>VI. Troubleshooting</strong><br>
+        Problem - Solution<br>
+        • Can’t login → Check username/password<br>
+        • Data not saving → Ensure all fields are filled and click Save<br>
+        • Page not loading → Refresh or reopen</p>
+
+    <p><strong>VII. Tips</strong><br>
+        • Review all details before saving or printing.<br>
+        • Back up data regularly.<br>
+        • Use the search feature to avoid duplicates.<br>
+        • Log out after every session.</p>
+
+    <p><strong>VIII. Conclusion</strong><br>
+        The Barangay Residents Information System makes local governance faster and more organized.
+        By automating resident records, complaints, and certificate issuance, barangay staff can provide efficient and transparent service to the community.</p>
+</div>
+
+
+<script th:src="@{Js/userguide.js}"></script>
+</body>
+</html>

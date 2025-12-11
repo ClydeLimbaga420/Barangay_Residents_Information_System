@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Resident</title>
+    <link rel="stylesheet" th:href="@{/Css/newresident.css}">
+    <link rel="icon" th:href="@{/Images/Logo.png}">
+</head>
+<body>
+<div id="header">
+    <p class="residentp"><b>New Resident</b></p>
+    <p id="back" onclick="window.location.href='/homepage'">Back</p>
+</div>
+
+<div th:if="${errorMessage}" style="color: red; margin-bottom: 10px; margin-left:150px;">
+    <p th:text="${errorMessage}"></p>
+</div>
+<div th:if="${successMessage}" style="color: green; margin-bottom: 10px; margin-left: 250px;">
+    <p th:text="${successMessage}"></p>
+</div>
+
+<form th:action="@{/residents/save}" method="post" enctype="multipart/form-data">
+    <h2>Add New Resident</h2>
+    <h4>Profile Picture</h4>
+
+    <div class="profile-upload">
+        <div class="profile-picture" id="photoPreview">
+            <span th:if="${residentPhotoBase64 == null}">No Image</span>
+            <img th:if="${residentPhotoBase64 != null}"
+                 th:src="'data:image/jpeg;base64,' + ${residentPhotoBase64}"
+                 style="width:100px;height:100px;object-fit:cover;border-radius:5px;">
+        </div>
+        <label for="fileUpload" class="file-label">Choose File</label>
+        <input type="file" id="fileUpload" class="file-input" name="photoFile" accept="image/*">
+    </div>
+    <br>
+    <br>
+    <div class="form-row">
+        <div class="form-group">
+            <label for="input_lastname">Last Name</label>
+            <input type="text" id="input_lastname" required name="lastname" placeholder="Input Last Name"
+                   th:value="${resident?.lastname}">
+        </div>
+
+        <div class="form-group">
+            <label for="input_firstname">First Name</label>
+            <input type="text" id="input_firstname" required name="firstname" placeholder="Input First Name"
+                   th:value="${resident?.firstname}">
+        </div>
+
+        <div class="form-group">
+            <label for="input_middlename">Middle Name</label>
+            <input type="text" id="input_middlename" name="middlename" placeholder="Optional"
+                   th:value="${resident?.middlename}">
+        </div>
+
+        <div class="form-group">
+            <label for="select_suffix">Suffix</label>
+            <input list="suffixList" id="select_suffix" name="suffix" required placeholder="Select Suffix"
+                   th:value="${resident?.suffix}">
+            <datalist id="suffixList">
+                <option value="None">
+                <option value="Jr.">
+                <option value="Sr.">
+                <option value="II">
+                <option value="III">
+                <option value="IV">
+                <option value="V">
+            </datalist>
+        </div>
+
+        <div class="form-group">
+            <label for="input-age">Age</label>
+            <input type="number" id="input-age" required name="age" readonly placeholder="Set the Birthdate"
+                   th:value="${resident?.age}">
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group">
+            <label for="select_sex">Sex</label>
+            <select id="select_sex" required name="sex">
+                <option disabled selected>Select</option>
+                <option th:selected="${resident?.sex == 'Male'}">Male</option>
+                <option th:selected="${resident?.sex == 'Female'}">Female</option>
+                <option th:selected="${resident?.sex == 'Rather Not Say'}">Rather Not Say</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="input_birthdate">Birthdate</label>
+            <input type="date" id="input_birthdate" required name="birthdate" th:value="${resident?.birthdate}">
+        </div>
+
+        <input type="hidden" id="seniorStatus" name="senior" th:value="${resident?.senior}">
+    </div>
+
+    <div class="form-row">
+        <div class="form-group">
+            <label for="input_status">Civil Status</label>
+            <select id="input_status" required name="civilstatus">
+                <option disabled selected>Select</option>
+                <option th:selected="${resident?.civilstatus == 'Single'}">Single</option>
+                <option th:selected="${resident?.civilstatus == 'Married'}">Married</option>
+                <option th:selected="${resident?.civilstatus == 'Widowed'}">Widowed</option>
+                <option th:selected="${resident?.civilstatus == 'Separated'}">Separated</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="input_Sitio">Sitio</label>
+            <input type="text" id="input_Sitio" required name="sitio" placeholder="Enter Sitio you live"
+                   th:value="${resident?.sitio}">
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group">
+            <label for="input_occupation">Occupation</label>
+            <input type="text" id="input_occupation" required name="occupation" placeholder="Input Occupation"
+                   th:value="${resident?.occupation}">
+        </div>
+
+        <div class="form-group">
+            <label for="input_contactnumber">Contact Number</label>
+            <input type="tel" id="input_contactnumber" required name="contactnumber" minlength="11" maxlength="11"
+                   placeholder="09XXXXXXXXX" th:value="${resident?.contactnumber}">
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group">
+            <label for="select_voterstatus">Voter Status</label>
+            <select id="select_voterstatus" required name="voterstatus">
+                <option disabled selected>Select</option>
+                <option th:selected="${resident?.voterstatus == 'Registered'}">Registered</option>
+                <option th:selected="${resident?.voterstatus == 'Not Registered'}">Not Registered</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="input_email">Email Address</label>
+            <input type="email" id="input_email" name="email" placeholder="username@gmail.com (Optional)"
+                   th:value="${resident?.email}">
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group">
+            <label for="input_numberofhousehold">Number of Household Members</label>
+            <input type="number" id="input_numberofhousehold" required name="household" max="20"
+                   placeholder="Number of Family Members" th:value="${resident?.household}">
+        </div>
+
+        <div class="form-group">
+            <label for="select_religion">Religion</label>
+            <input list="religionList" id="select_religion" name="religion" required placeholder="Select Religion"
+                   th:value="${resident?.religion}">
+            <datalist id="religionList">
+                <option value="Roman Catholic">
+                <option value="Islam">
+                <option value="Iglesia ni Cristo">
+                <option value="Born Again">
+            </datalist>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="checkbox-group">
+            <label>
+                PWD
+                <input type="checkbox" id="check_personwithdisability" name="pwd"
+                       th:checked="${resident?.pwd}">
+            </label>
+        </div>
+
+        <div class="form-group">
+            <label for="select_bloodtype">Blood Type</label>
+            <select id="select_bloodtype" class="select-blood" required name="bloodtype">
+                <option disabled selected>Select</option>
+                <option th:selected="${resident?.bloodtype == 'A'}">A</option>
+                <option th:selected="${resident?.bloodtype == 'A+'}">A+</option>
+                <option th:selected="${resident?.bloodtype == 'A-'}">A-</option>
+                <option th:selected="${resident?.bloodtype == 'B'}">B</option>
+                <option th:selected="${resident?.bloodtype == 'B+'}">B+</option>
+                <option th:selected="${resident?.bloodtype == 'B-'}">B-</option>
+                <option th:selected="${resident?.bloodtype == 'AB'}">AB</option>
+                <option th:selected="${resident?.bloodtype == 'AB+'}">AB+</option>
+                <option th:selected="${resident?.bloodtype == 'AB-'}">AB-</option>
+                <option th:selected="${resident?.bloodtype == 'O'}">O</option>
+                <option th:selected="${resident?.bloodtype == 'O+'}">O+</option>
+                <option th:selected="${resident?.bloodtype == 'O-'}">O-</option>
+                <option th:selected="${resident?.bloodtype == 'N/A'}">N/A</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="select_educationalattainment">Educational Attainment</label>
+            <input list="educationList" id="select_educationalattainment" class="select-education" name="education" required
+                   th:value="${resident?.education}" placeholder="Select Educational Attainment">
+            <datalist id="educationList">
+                <option value="Elementary Level">
+                <option value="Elementary Graduate">
+                <option value="High School Level">
+                <option value="High School Graduate">
+                <option value="Senior High School Level">
+                <option value="Senior High School Graduate">
+            </datalist>
+        </div>
+
+        <div class="form-group">
+            <label for="select_condition">Condition</label>
+            <select id="select_condition" class="select-condition" required name="condition">
+                <option value="Alive" th:selected="${resident?.condition == 'Alive'}">Alive</option>
+                <option value="Deceased" th:selected="${resident?.condition == 'Deceased'}">Deceased</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="buttons">
+        <button class="save" type="submit">Save</button>
+    </div>
+</form>
+
+<div id="Footer"></div>
+<script th:src="@{Js/newresident.js}"></script>
+</body>
+</html>

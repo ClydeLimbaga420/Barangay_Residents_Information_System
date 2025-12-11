@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blotter Records</title>
+    <link rel="stylesheet" th:href="@{/Css/blotterrecords.css}">
+    <link rel="icon" th:href="@{/Images/Logo.png}">
+</head>
+<body>
+<div id="header">
+    <p class="blotterp"><b>Blotter Records</b></p>
+    <p class="back" onclick="window.location.href='/homepage'"> Back </p>
+</div>
+
+<div id="searchbox">
+    <input type="text" class="search" placeholder="Search...">
+    <button class="serbot">
+        <img th:src="@{/Images/Search.png}" alt="searchicon" width="22px" height="22px">
+    </button>
+</div>
+
+<div id="blottersListBox">
+    <div class="list-header">
+        <span>Case No.</span>
+        <span>Respondent</span>
+        <span>Date</span>
+        <span>Status</span>
+    </div>
+    <div class="blottersList"></div>
+</div>
+
+<script th:src="@{Js/blotterrecords.js}"></script>
+</body>
+</html>

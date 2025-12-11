@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blotter Records</title>
+    <link rel="stylesheet" th:href="@{/Css/blotterinfo.css}">
+    <link rel="icon" th:href="@{/Images/Logo.png}">
+</head>
+<body>
+<div id="header">
+    <p class="blotterr"> <b>Blotter Record</b></p>
+    <p class="back" onclick="window.location.href='/blotterrecords'"> Back </p>
+</div>
+
+<div id="box1" style="border-radius: 4.3px; background: white;">
+    <div id="box1Header" style="border-radius: 3px; border-bottom-left-radius:0px;border-bottom-right-radius:0px;">
+        <h3>Blotter Case Details </h3>
+        <p id="viewMore">View More</p>
+    </div>
+    <div id="box1Lower">
+        <p><b>Case No. </b><span id="caseNum"></span></p>
+        <p><b>Date Filed: </b><span id="dateFiled"></span></p>
+        <p><b>Complainant: </b><span id="complianant"></span></p>
+        <p><b>Respondent: </b><span id="respondent"></span></p>
+        <p><b>Officer In Charge: </b><span id="officerInCharge"></span></p>
+        <p><b>Status: </b><span id="status"></span></p>
+        <p><b>Case Level: </b><span id="caselevel"></span></p>
+        <div class="space"></div>
+        <p><b>Case Description</b></p>
+        <p id="caseDescription"></p>
+    </div>
+    <div class="buttons">
+        <button class="markactive">Mark as Active</button>
+        <button class="mark">Mark as Resolved</button>
+        <button id="backb">Back to Records</button>
+    </div>
+</div>
+
+<div id="box2" style="display:none; border-radius:4.3px; background: white;">
+    <div id="box2Header" style="border-radius:3px; border-bottom-left-radius:0px;border-bottom-right-radius:0px;">
+        <h3>Blotter Case Details </h3>
+        <p id="back">Back</p>
+    </div>
+    <div id="box2Lower">
+        <p id="complianantInfo"><b>Complainant Information</b></p>
+        <p><b>Name: </b><span id="complianantName"></span></p>
+        <p><b>Age: </b><span id="complianantAge"></span></p>
+        <p><b>Contact: </b><span id="complianantContact"></span></p>
+        <p><b>Address: </b><span id="complianantAddress"></span></p>
+
+        <p id="respondedtInfo"><b>Respondent Information</b></p>
+        <p><b>Name: </b><span id="respondentName"></span></p>
+        <p><b>Age: </b><span id="respondentAge"></span></p>
+        <p><b>Contact: </b><span id="respondentContact"></span></p>
+        <p><b>Address: </b><span id="respondentAddress"></span></p>
+        <div class="space"></div>
+        <p><b>Location Incident: </b></p>
+        <p id="locationIncident"></p>
+        <p><b>Action Taken: </b></p>
+        <p id="actionTaken"></p>
+    </div>
+    <div class="buttons">
+        <button class="markactive">Mark as Active</button>
+        <button class="mark">Mark as Resolved</button>
+        <button class="backd">Back to Records</button>
+    </div>
+</div>
+
+<script th:src="@{Js/blotterinfo.js}"></script>
+</body>
+</html>

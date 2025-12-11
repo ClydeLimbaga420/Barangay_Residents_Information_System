@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+    <title>Homepage</title>
+    <link rel="stylesheet" th:href="@{/Css/homepage.css}">
+    <link rel="icon" th:href="@{/Images/Logo.png}">
+</head>
+
+<body>
+<div id="logoutconfirm" class="confirm">
+    <div class="confirmation">
+        <p>Are you sure you want to <b>Log Out</b>?</p>
+        <div class="buttons">
+            <button id="cancel">Cancel</button>
+            <button id="logout">Log Out</button>
+        </div>
+    </div>
+</div>
+
+<div class="header">
+    <nav>
+        <ul>
+            <li id="dropdown">
+                <img th:src="@{/Images/Dropdown.png}" alt="navigation bar" id="menubar">
+            </li>
+        </ul>
+    </nav>
+    <p id="Home"><b>Home</b></p>
+</div>
+
+<nav id="Inner_Dropdown">
+    <ul id="menu_dropdown" style="display:none;">
+        <li onclick="window.location.href='/userguide'">
+            <img th:src="@{/Images/User_Guide.png}" alt="userguide logo">User Guide
+        </li>
+        <li onclick="window.location.href='/history'">
+            <img th:src="@{/Images/History.png}" alt="history Logo">History
+        </li>
+        <li id="logoutbutton">
+            <img th:src="@{/Images/Log_Out.png}" alt="Logout_logo">Logout
+        </li>
+    </ul>
+</nav>
+
+<div>
+    <p class="bris"><b>Barangay Residents Information <br> System</b></p>
+    <p class="manage_residents">Barangay Service and Records</p>
+</div>
+
+<div id="records">
+    <a href="/newresident" class="box">
+        <div id="icon1">
+            <img th:src="@{/Images/New_Resident.png}" alt="add_resident">
+        </div>
+        <div id="res1">
+            <p style="color:#1F2937;"><b>New Resident</b></p>
+            <p style="color:#4B5563;">Register a resident</p>
+        </div>
+    </a>
+
+    <a id="currentResidents" href="/residentsrecords" class="box">
+        <div id="icon2">
+            <img th:src="@{/Images/Residents_Count.png}" alt="residents_record">
+        </div>
+        <div class="residentsRecords">
+            <img th:src="@{/Images/Residents_Records.png}" alt="residentsRecords" height="30px" width="30px">
+            <span id="residentsRecords"></span>
+        </div>
+        <div id="res2">
+            <p style="color:#1F2937;"><b>Residents Records</b></p>
+            <p style="color:#4B5563;">Residents Information</p>
+        </div>
+
+        <div id="sitioChartContainer" class="fade"style="display:none; width:100%; height:180px;">
+            <canvas id="sitioChart"></canvas>
+        </div>
+
+        <div id="sitioData" style="display:none;">
+        </div>
+    </a>
+
+    <a id="residentsBlotterRecords" href="/blotterrecords" class="box">
+        <div id="icon3">
+            <img th:src="@{/Images/Blotter_Records.png}" alt="Blotter_Records">
+        </div>
+        <div class="residentsBlotterRecords">
+            <img th:src="@{/Images/Blotter_Count.png}" alt="residentsBlotterRecords" height="30px" width="30px">
+            <span id="blotterRecords"></span>
+        </div>
+        <div id="res3">
+            <p style="color:#1F2937;"><b>Blotter Records</b></p>
+            <p style="color:#4B5563;">Records of Cases</p>
+        </div>
+    </a>
+</div>
+
+<div id="records1">
+    <a href="/reportcase" class="box">
+        <div id="icon4">
+            <img th:src="@{/Images/Report_Case.png}" alt="Case report">
+        </div>
+        <div id="res4">
+            <p style="color:#1F2937;"><b>Report Case</b></p>
+            <p style="color:#4B5563;">File a New Report</p>
+        </div>
+    </a>
+
+    <a href="/certificates" class="box">
+        <div id="icon5">
+            <img th:src="@{/Images/Certificates.png}" alt="Certificate">
+        </div>
+        <div id="res5">
+            <p style="color:#1F2937;"><b>Clearance/Certificate</b></p>
+            <p style="color:#4B5563;">Make a Certificate</p>
+        </div>
+    </a>
+</div>
+
+<div id="Footer"></div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script th:src="@{Js/homepage.js}"></script>
+</body>
+</html>

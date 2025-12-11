@@ -1,0 +1,28 @@
+<!DOCTYPE>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History</title>
+    <link rel="stylesheet" th:href="@{/Css/history.css}">
+    <link rel = "icon" th:href="@{/Images/Logo.png}">
+
+</head>
+
+<body>
+<div id="header">
+    <p class="historyp"><b>History</b></p>
+    <p class="back" onclick="window.location.href='/homepage'"> Back </p>
+</div>
+
+<div id="historyListBox">
+
+    <div class=historyList ></div>
+
+</div>
+
+
+
+<script th:src="@{Js/history.js}"></script>
+</body>
+</html>

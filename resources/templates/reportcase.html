@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Report Case</title>
+    <link rel="stylesheet" th:href="@{/Css/reportcase.css}">
+    <link rel="icon" th:href="@{/Images/Logo.png}">
+</head>
+<body>
+<div id="header">
+    <p class="residentp"><b>Report Case</b></p>
+    <p id="back" onclick="window.location.href='/homepage'">Back</p>
+</div>
+
+<div class="report-wrapper">
+    <div class="report-box">
+        <h3>REPORTING PERSON DATA</h3>
+        <form id="reportForm" th:action="@{/blotter/add}" method="post">
+            <div class="form-layout">
+                <div class="left-section">
+                    <label>Complainant Full Name:</label>
+                    <div class="triple-inputs">
+                        <input type="text" placeholder="First Name" id="c_fname" required name="Comfirstname" />
+                        <input type="text" placeholder="Middle Name" id="c_mname" name="Commiddlename"/>
+                        <input type="text" placeholder="Last Name" id="c_lname" required name="Comlastname" />
+                    </div>
+                    <div class="double-inputs">
+                        <div>
+                            <label>Contact:</label>
+                            <input type="text" id="c_contact" name="Ccontact" minlength="11" maxlength="11" required/>
+                        </div>
+                        <div>
+                            <label>Age:</label>
+                            <input type="number" id="c_age" required name="Cage" />
+                        </div>
+                    </div>
+                    <label>Address:</label>
+                    <input type="text" id="c_address" required name="Caddress" />
+                    <label>Respondent Full Name:</label>
+                    <div class="triple-inputs">
+                        <input type="text" placeholder="First Name" id="r_fname" required name="Resfirstname" />
+                        <input type="text" placeholder="Middle Name" id="r_mname" name="Resmiddlename"/>
+                        <input type="text" placeholder="Last Name" id="r_lname" required name="Reslastname"/>
+                    </div>
+                    <div class="double-inputs">
+                        <div>
+                            <label>Contact:</label>
+                            <input type="text" id="r_contact" name="Rcontact" minlength="11" maxlength="11" required/>
+                        </div>
+                        <div>
+                            <label>Age:</label>
+                            <input type="number" id="r_age" name="Rage" required/>
+                        </div>
+                    </div>
+                    <div class="double-inputs">
+                        <div>
+                            <label>Case No.:</label>
+                            <input type="text" id="case_no" required name="caseno"/>
+                        </div>
+                        <div>
+                            <label>Address:</label>
+                            <input type="text" id="r_address" required name="Raddress" />
+                        </div>
+                    </div>
+                    <div class="double-inputs">
+                        <div>
+                            <label>Date of Complain:</label>
+                            <input type="date" id="date_complain" required name="complaindate" />
+                        </div>
+                        <div>
+                            <label>Status:</label>
+                            <select id="status" required name="status">
+                                <option value="Pending">Pending</option>
+                                <option value="Resolved">Resolved</option>
+                                <option value="Active">Active</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="double-inputs">
+                        <div>
+                            <label>Location of Incidence:</label>
+                            <input type="text" id="location" required name="location"/>
+                        </div>
+                        <div>
+                            <label>Officer In Charge:</label>
+                            <input type="text" id="officer" required name="official" />
+                        </div>
+                    </div>
+                </div>
+                <div class="right-section">
+                    <div>
+                        <label>Case Description:</label>
+                        <textarea id="case_desc" required name="casedescription"></textarea>
+                    </div>
+                    <div>
+                        <label>Action Taken:</label>
+                        <textarea id="action_taken" required name="action"></textarea>
+                    </div>
+                    <div>
+                        <label>Case Level:</label>
+                        <select id="caselevel" required name="caselevel">
+                            <option value="Normal">Normal</option>
+                            <option value="Average">Average</option>
+                            <option value="Critical">Critical</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="submit-row">
+                <button type="submit">Add Report</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="Footer"></div>
+<script th:src="@{Js/reportcase.js}"></script>
+</body>
+</html>
